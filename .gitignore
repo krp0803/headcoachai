@@ -1,0 +1,17 @@
+.env 
+.env.local 
+.env.production 
+ 
+node_modules/ 
+backend/venv/ 
+backend/__pycache__/ 
+*.pyc 
+ 
+frontend/dist/ 
+frontend/build/ 
+ 
+.vscode/ 
+.idea/ 
+ 
+.DS_Store 
+Thumbs.db 

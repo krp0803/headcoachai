@@ -121,6 +121,16 @@ def get_fallback_drills(sport: str, focus: str) -> List[DrillSearchResult]:
                 title="Ball Control Circuit",
                 description="Players move through stations working on different touches: inside foot, outside foot, sole, and laces.",
                 source="headcoach-basics"
+            ),
+            DrillSearchResult(
+                title="Small-Sided Games",
+                description="4v4 or 3v3 games in small areas to increase touches and decision-making opportunities.",
+                source="headcoach-basics"
+            ),
+            DrillSearchResult(
+                title="Shooting Technique",
+                description="Progressive shooting drill starting close to goal, focusing on placement over power.",
+                source="headcoach-basics"
             )
         ],
         "basketball": [
@@ -138,6 +148,16 @@ def get_fallback_drills(sport: str, focus: str) -> List[DrillSearchResult]:
                 title="Defensive Slides",
                 description="Players practice defensive stance and lateral movement along the baseline.",
                 source="headcoach-basics"
+            ),
+            DrillSearchResult(
+                title="Layup Lines",
+                description="Classic drill for practicing layups from both sides of the basket.",
+                source="headcoach-basics"
+            ),
+            DrillSearchResult(
+                title="Passing Fundamentals",
+                description="Partner passing focusing on chest pass, bounce pass, and overhead pass.",
+                source="headcoach-basics"
             )
         ],
         "baseball": [
@@ -150,6 +170,16 @@ def get_fallback_drills(sport: str, focus: str) -> List[DrillSearchResult]:
                 title="Fielding Fundamentals",
                 description="Ground ball practice with proper footwork and glove positioning.",
                 source="headcoach-basics"
+            ),
+            DrillSearchResult(
+                title="Throwing Accuracy",
+                description="Partner throwing focusing on proper mechanics and accuracy to target.",
+                source="headcoach-basics"
+            ),
+            DrillSearchResult(
+                title="Base Running",
+                description="Practice proper running form and base running techniques.",
+                source="headcoach-basics"
             )
         ],
         "volleyball": [
@@ -161,6 +191,38 @@ def get_fallback_drills(sport: str, focus: str) -> List[DrillSearchResult]:
             DrillSearchResult(
                 title="Serving Accuracy",
                 description="Target practice with serves to different zones of the court.",
+                source="headcoach-basics"
+            ),
+            DrillSearchResult(
+                title="Pepper Drill",
+                description="Continuous bump, set, spike between partners to develop ball control.",
+                source="headcoach-basics"
+            ),
+            DrillSearchResult(
+                title="Blocking Technique",
+                description="Practice proper blocking form and timing at the net.",
+                source="headcoach-basics"
+            )
+        ],
+        "flag-football": [
+            DrillSearchResult(
+                title="Route Running",
+                description="Practice basic routes: slant, out, go, and comeback patterns.",
+                source="headcoach-basics"
+            ),
+            DrillSearchResult(
+                title="Flag Pulling",
+                description="Defensive drill focusing on proper flag pulling technique.",
+                source="headcoach-basics"
+            ),
+            DrillSearchResult(
+                title="Quarterback Accuracy",
+                description="Throwing drills with targets at different distances and heights.",
+                source="headcoach-basics"
+            ),
+            DrillSearchResult(
+                title="Center-QB Exchange",
+                description="Practice proper snap technique and quarterback footwork.",
                 source="headcoach-basics"
             )
         ]
@@ -202,90 +264,124 @@ async def generate_practice_plan(
 - Light jogging around the field/court
 - High knees, butt kicks, side shuffles
 - Arm circles and leg swings
+- Sport-specific movement patterns
 
 ### Sport-Specific Warm-up ({warmup_time-5} minutes)
-- {sport_title}-specific movements
-- Ball touches and basic skills
+- {sport_title}-specific movements and touches
+- Ball handling and basic skills at low intensity
 - Gradual intensity increase
+- Partner warm-up activities
 
 **Coaching Points**: 
 - Emphasize proper form over speed
 - Check for any injuries or concerns
-- Build energy and focus
+- Build energy and focus for the session
+- Encourage communication between players
 
 ## ⚽ Technical Skills Development ({skill_time} minutes)
 **Primary Focus**: {request.focus}
 
 ### Skill Station 1 ({skill_time//2} minutes)
 - Progressive skill building related to {request.focus}
-- Individual technique work
-- Immediate feedback and correction
+- Individual technique work with immediate feedback
+- Break down complex movements into simple steps
+- Use demonstrations and guided practice
 
 ### Skill Station 2 ({skill_time//2} minutes)
-- Partner/small group application
-- Add pressure and decision-making
-- Competition element to maintain engagement
+- Partner/small group application of skills
+- Add pressure and decision-making elements
+- Competitive drills to maintain engagement
+- Rotate players through different roles
 
 **Coaching Points**:
-- Break down complex skills into simple steps
-- Use positive reinforcement
-- Ensure all players get equal attention
-- Modify difficulty based on individual needs
+- Focus on quality over quantity
+- Provide specific, actionable feedback
+- Celebrate improvement and effort
+- Modify difficulty based on individual player needs
+- Keep players active and engaged
 
 ## 🎯 Game Application ({game_time} minutes)
 **Objective**: Apply skills in game-like situations
 
-### Small-Sided Games
-- Reduced numbers to increase touches
+### Small-Sided Games ({game_time//2} minutes)
+- Reduced numbers (3v3, 4v4) to increase touches
 - Modified rules to emphasize {request.focus}
-- Rotate teams to ensure equal playing time
+- Multiple fields/courts for maximum participation
+- Quick rotations to keep energy high
 
-### Competitive Drills
-- Fun competitions that reinforce skills
-- Team vs team challenges
-- Individual skill contests
+### Competitive Challenges ({game_time//2} minutes)
+- Skills competitions and team challenges
+- Fun games that reinforce technique
+- Individual and team scoring systems
+- Positive competition and sportsmanship
 
 **Coaching Points**:
 - Let players make mistakes and learn
-- Encourage communication
-- Praise good decision-making
-- Keep games moving and energetic
+- Encourage communication and teamwork
+- Praise good decision-making over results
+- Keep games moving with quick transitions
+- Focus on fun while maintaining structure
 
 ## 🧘 Cool-Down & Wrap-Up ({cooldown_time} minutes)
-**Objective**: Proper recovery and reflection
+**Objective**: Proper recovery and positive closure
 
 ### Physical Cool-Down (3 minutes)
 - Light walking or easy movement
 - Static stretching for major muscle groups
 - Deep breathing exercises
+- Hydration break
 
 ### Team Huddle (2 minutes)
 - Highlight positive moments from practice
-- Ask players what they learned
-- Preview next practice/game
-- Team cheer or motivational moment
+- Ask players what they learned today
+- Preview next practice or upcoming games
+- Team cheer or motivational closing
 
 ## 🎯 Key Teaching Points for {sport_title}
-- Safety first - proper technique prevents injuries
-- Encourage creativity and decision-making
-- Focus on effort and improvement, not perfection
-- Make it fun - youth sports should be enjoyable!
+- **Safety First**: Proper technique prevents injuries
+- **Decision Making**: Encourage players to think and react
+- **Effort Over Outcome**: Praise hard work and improvement
+- **Fun Factor**: Keep youth sports enjoyable and engaging
+- **Individual Growth**: Every player develops at their own pace
 
 ## 📝 Equipment Needed
 - {sport_title} balls (one per 2-3 players)
-- Cones or markers
-- Water bottles for hydration
-- First aid kit
-- Positive attitude and enthusiasm!
+- Cones or markers for boundaries and drills
+- Water bottles and hydration station
+- First aid kit and emergency contacts
+- Positive attitude and coaching enthusiasm!
 
 ## 🔄 Modifications for Different Skill Levels
-**Beginners**: Slow down pace, more demonstrations, simpler rules
-**Intermediate**: Add complexity, increase speed, introduce tactics
-**Advanced**: Higher intensity, advanced techniques, leadership roles
+
+**Beginners**:
+- Slower pace with more demonstrations
+- Simpler rules and fewer variables
+- More encouragement and basic skill focus
+- Shorter activity durations
+
+**Intermediate**:
+- Add complexity and tactical elements
+- Increase speed and intensity gradually
+- Introduce more advanced techniques
+- Longer sustained activities
+
+**Advanced**:
+- Higher intensity and game-like pressure
+- Advanced techniques and strategies
+- Leadership roles and peer coaching
+- Competitive elements and challenges
+
+## 🌟 Additional Tips for Success
+- Arrive early to set up equipment and plan
+- Learn every player's name and use it often
+- Stay positive and energetic throughout
+- Be flexible and adapt based on player needs
+- End on a high note with something fun
 
 ---
 *This practice plan was generated by HeadCoachAI - Your AI assistant for youth sports coaching*
-*Remember: Every child is different. Adapt this plan to meet your team's specific needs!*
+
+*Remember: Every child is different. Adapt this plan to meet your team's specific needs and always prioritize safety, fun, and individual development!*
         """
 
         # Add selected drills if any
@@ -297,7 +393,7 @@ async def generate_practice_plan(
         return {
             "generated_plan": practice_plan,
             "web_drills_found": len(get_fallback_drills(request.sport, request.focus)),
-            "sources_used": ["headcoach-basics", "youth-sports-fundamentals"]
+            "sources_used": ["headcoach-basics", "youth-sports-fundamentals", "coaching-excellence"]
         }
 
     except Exception as e:
@@ -351,6 +447,14 @@ async def get_practice_plans(
                 "duration": 75,
                 "created_at": "2024-01-14T15:30:00Z",
                 "selected_drills": ["Shooting Form", "Dribbling"]
+            },
+            {
+                "id": "sample-3",
+                "title": "Baseball - U8 Fundamentals",
+                "sport": "baseball",
+                "duration": 60,
+                "created_at": "2024-01-13T16:00:00Z",
+                "selected_drills": ["Tee Work", "Fielding Basics"]
             }
         ]
         return sample_plans[:limit]

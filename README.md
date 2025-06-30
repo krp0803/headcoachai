@@ -1,136 +1,69 @@
-\# 🏆 HeadCoachAI - Youth Sports Practice Planner
+# 🏆 HeadCoachAI - Youth Sports Practice Planner
 
+AI-powered practice plan generator for youth sports coaches with real-time drill research from top coaching websites.
 
+## ✨ Features
 
-AI-powered practice plan generator for youth sports coaches with real-time drill research.
+- 🤖 **AI-Generated Practice Plans** - Powered by GPT-4 with sport-specific knowledge
+- 🌐 **Real-Time Drill Research** - Fetches latest drills from coaching websites using Tavily API
+- ⚽ **Multi-Sport Support** - Soccer, Basketball, Baseball, Volleyball, Flag Football
+- 👶 **Age-Appropriate Content** - Safety protocols and skill progressions for youth athletes
+- 🔐 **User Authentication** - Secure login with Google/GitHub via Supabase
+- 💾 **Practice Plan Storage** - Save and organize your coaching history
+- 📱 **Responsive Design** - Works perfectly on desktop and mobile
 
+## 🛠️ Tech Stack
 
+**Frontend:** React 18, TypeScript, Tailwind CSS, Vite, Supabase Auth  
+**Backend:** Python FastAPI, OpenAI GPT-4 API, Tavily API  
+**Database:** Supabase  
+**Deployment:** Vercel + Render
 
-\## ✨ Features
+## 🚀 Quick Start
 
+**Prerequisites:**
 
+- Node.js 18+
+- Python 3.11+
+- OpenAI API key
+- Tavily API key
+- Supabase account
 
-\- 🤖 AI-Generated Practice Plans powered by GPT-4
-
-\- 🌐 Real-time drill research from coaching websites  
-
-\- ⚽ Multi-sport support (Soccer, Basketball, Baseball, Volleyball)
-
-\- 👶 Age-appropriate content with safety protocols
-
-\- 🔐 Secure authentication with Google/GitHub
-
-\- 💾 Save and organize practice plans
-
-\- 📱 Responsive design for all devices
-
-
-
-\## 🛠️ Tech Stack
-
-
-
-\*\*Frontend:\*\* React, TypeScript, Tailwind CSS, Vite, Supabase Auth  
-
-\*\*Backend:\*\* Python FastAPI, OpenAI API, Tavily API  
-
-\*\*Database:\*\* Supabase  
-
-\*\*Deployment:\*\* Vercel + Render  
-
-
-
-\## 🚀 Quick Start
-
-
-
-\*\*Prerequisites:\*\*
-
-\- Node.js 18+
-
-\- Python 3.11+
-
-\- OpenAI API key
-
-\- Tavily API key
-
-\- Supabase account
-
-
-
-\*\*Frontend Setup:\*\*
-
-```bash
-
+**Frontend Setup:**
+\`\`\`bash
 cd frontend
-
 npm install
-
 npm run dev
+\`\`\`
 
-```
-
-
-
-\*\*Backend Setup:\*\*
-
-```bash
-
+**Backend Setup:**
+\`\`\`bash
 cd backend
-
 python -m venv venv
-
-venv\\\\Scripts\\\\activate
-
+venv\\Scripts\\activate
 pip install -r requirements.txt
-
 uvicorn main:app --reload
+\`\`\`
 
-```
+## 🌐 Environment Variables
 
+Create \`.env.local\` in frontend folder:
+\`\`\`
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+VITE_API_BASE_URL=http://localhost:8000
+\`\`\`
 
+Create \`.env\` in backend folder:
+\`\`\`
+OPENAI_API_KEY=your_openai_api_key
+TAVILY_API_KEY=your_tavily_api_key
+SUPABASE_URL=your_supabase_url
+SUPABASE_SERVICE_KEY=your_supabase_service_key
+\`\`\`
 
-\## 🌐 Environment Variables
+## 🚀 Live Demo
 
+## 📸 Screenshots
 
-
-Create `.env.local` in frontend folder:
-
-```
-
-VITE\_SUPABASE\_URL=your\_supabase\_url
-
-VITE\_SUPABASE\_ANON\_KEY=your\_supabase\_anon\_key
-
-VITE\_API\_BASE\_URL=http://localhost:8000
-
-```
-
-
-
-Create `.env` in backend folder:
-
-```
-
-OPENAI\_API\_KEY=your\_openai\_api\_key
-
-TAVILY\_API\_KEY=your\_tavily\_api\_key
-
-SUPABASE\_URL=your\_supabase\_url
-
-SUPABASE\_SERVICE\_KEY=your\_supabase\_service\_key
-
-```
-
-
-
-\## 📸 Live Demo
-
-
-
-\[Add your deployed app URL here]
-
-
-
-
-
+---

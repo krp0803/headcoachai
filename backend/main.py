@@ -5,9 +5,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 import os
 from dotenv import load_dotenv
-import openai
 import requests
-from supabase import create_client, Client
 import json
 from datetime import datetime
 
@@ -19,8 +17,7 @@ app = FastAPI(title="HeadCoachAI Backend", version="1.0.0")
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000",
-                   "https://headcoachai.vercel.app", "https://*.vercel.app"],
+    allow_origins=["*"],  # In production, replace with your frontend domain
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -29,15 +26,6 @@ app.add_middleware(
 # Environment variables
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_SERVICE_KEY = os.getenv("SUPABASE_SERVICE_KEY")
-
-# Initialize clients
-if OPENAI_API_KEY:
-    openai.api_key = OPENAI_API_KEY
-
-if SUPABASE_URL and SUPABASE_SERVICE_KEY:
-    supabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)
 
 # Security
 security = HTTPBearer()
@@ -72,7 +60,7 @@ class PracticePlan(BaseModel):
     selected_drills: List[str] = []
     generated_plan: str
 
-# Auth dependency
+# Auth dependency (simplified for now)
 
 
 async def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(security)):
@@ -153,6 +141,11 @@ async def generate_practice_plan(
 ) -> dict:
     """Generate AI-powered practice plan"""
     try:
+        # Use OpenAI API if available, otherwise return basic plan
+        if OPENAI_API_KEY:
+            # TODO: Implement OpenAI API call
+            pass
+
         # Create a basic practice plan for now
         basic_plan = f"""
 # HeadCoachAI Practice Plan - {request.sport.title()}
